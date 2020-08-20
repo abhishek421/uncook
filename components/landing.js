@@ -15,7 +15,7 @@ class Landing extends React.Component{
     }
     
     handleSubmit(event) {
-        alert('Ohooo.. Bade aaye ' + this.state.value + ' mangane wale.. Are paaji thand rkho..!!');
+        window.location.href = "https://www.zomato.com/jaipur/restaurants?q=" + this.state.value;
         event.preventDefault();
     }
 
