@@ -14,7 +14,7 @@ class Home extends React.Component{
         </Head>
         <Navbar />
         <Landing />
-        <div style={{height:"400px",width:"100%",backgroundColor:"#ff3939",marginTop:"180px"}}></div>
+        <div style={{height:"400px",width:"100%",backgroundColor:"#ff3939",marginTop:"280px"}}></div>
       </div>
       )
   }
