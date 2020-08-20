@@ -31,7 +31,7 @@ class Landing extends React.Component{
             </div>
             <form onSubmit={this.handleSubmit} className={styles.searchbar} >
                 <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="Search Dishes, Cuisines, Restaurants.." className={styles.search} />
-                <button type="submit" className={styles.submit}><img src="./assets/search.svg"/></button>
+                <button type="submit" className={styles.submit}><img src="./assets/search.svg" height="24px"/></button>
             </form>
             </div>
         )
