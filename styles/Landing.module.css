@@ -1,0 +1,68 @@
+.cover {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    width: 100%;
+    height:100%;
+  }
+
+.brand{
+    margin: 30px auto;
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+  }
+  
+  .tagline{
+    margin: 30px auto;
+    align-content: center;
+    font-weight:500;
+    font-size:25px;
+    color:white;
+    text-align: center;
+  }
+  
+  .tagline p{
+    margin:auto;
+  }
+  
+  .searchbar{
+    margin: 0 auto;
+    width: 60%;
+    height: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 5px 10px 5px #0000005e;
+  }
+  
+  .search{
+    width: 90%;
+    padding: 10px;
+    border: none;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .submit{
+    float: right;
+    width: 10%;
+    height: auto;
+    background-color: #ff3939;
+    padding: 8px;
+    border: none;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+  }
+
+  @media (max-width: 500px){
+    .searchbar{
+      width: 90%;
+    }
+  
+    .tagline{
+      font-size: 25px;
+    }
+    
+}

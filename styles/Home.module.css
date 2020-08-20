@@ -1,10 +1,11 @@
 .container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  background-image: url("../public/assets/test.jpg");
+  background-size: 100% 100vh;
+  background-repeat: no-repeat;
 }
 
 .cover {
@@ -15,16 +16,6 @@
   vertical-align: center;
 }
 
-.bgcontainer {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url(../assets/test.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 .loginbox{
   position: absolute;
@@ -40,69 +31,8 @@
   justify-content: center;
 }
 
-.brand{
-  display: flex;
-  flex-flow: column;
-  align-content: center;
-}
-
-.tagline{
-  display: flex;
-  flex-flow: column;
-  align-content: center;
-  font-weight:500;
-  font-size:25px;
-  color:white;
-  text-align: center;
-}
-
-.tagline p{
-  margin:auto;
-}
-
-.lol{
-}
-
-.searchbar{
-  width: 60%;
-  height: 50px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0px 5px 10px 5px #0000005e;
-}
-
-.search{
-  width: 85%;
-  padding: 10px;
-  border: none;
-  font-size: 20px;
-  font-weight: 400;
-  font-family: "Poppins", sans-serif;
-}
-
-.submit{
-  width: 15%;
-  background-color: #ff3939;
-  color:white;
-  padding: 10px;
-  border: none;
-  font-size: 20px;
-  font-weight: 500;
-  font-family: "Poppins", sans-serif;
-}
 
 @media (max-width: 500px){
-  .searchbar{
-    width: 90%;
-  }
-
-  .brand{
-  }
-
-  .tagline{
-    font-size: 25px;
-  }
-
   .loginbox{
     position: absolute;
     top: 20vh;
@@ -117,6 +47,4 @@
     justify-content: center;
   }
   
-
-
 }
