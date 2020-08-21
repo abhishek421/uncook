@@ -36,6 +36,8 @@
 @media (max-width: 500px){
   .container{
     background-color: #ff3939;
+    background-size: 150vh;
+    background-position: top;
   }
   .loginbox{
     position: absolute;
