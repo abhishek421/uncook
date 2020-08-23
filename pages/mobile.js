@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Mobile.module.css';
 
+
 class Mobile extends React.Component{
   render(){
       return(
@@ -15,12 +16,31 @@ class Mobile extends React.Component{
             <div className={styles.logo}></div>
             <div className={styles.profile}></div>
         </div>
-
+        <div className={styles.quote}>"A recipe has no soul. You as the cook must bring soul to the recipe."</div>
         <div className={styles.container}>
 
         </div>
         <div className={styles.tabs}>
-            
+            <div className={styles.tab}>
+                <div className={styles.tabi} style={{backgroundImage:"url(../assets/logo.svg)"}}></div>
+                <p className={styles.tabp}>UnCook</p>
+            </div>
+            <div className={styles.tab}>
+                <div className={styles.tabi} style={{backgroundImage:"url(../assets/search.svg)"}}></div>
+                <p className={styles.tabp}>Search</p>
+            </div>
+            <div className={styles.tab}>
+                <div className={styles.tabi} style={{backgroundImage:"url(../assets/order.svg)"}}></div>
+                <p className={styles.tabp}>Order</p>
+            </div>
+            <div className={styles.tab}>
+                <div className={styles.tabi} style={{backgroundImage:"url(../assets/cart.svg)"}}></div>
+                <p className={styles.tabp}>Cart</p>
+            </div>
+            <div className={styles.tab}>
+                <div className={styles.tabi} style={{backgroundImage:"url(../assets/settings.svg)"}}></div>
+                <p className={styles.tabp}>Settings</p>
+            </div>
         </div>
       </div>
       )

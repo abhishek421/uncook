@@ -1,18 +1,18 @@
 .background{
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     flex-flow: column;
     background-image: url(../public/assets/doodle.png),linear-gradient(#9B2121, #D82F2F 60%);
-    background-size: 130%;
+    background-size: 150%;
     background-position: center;
     background-blend-mode: multiply;
 }
 
 .navbar{
-    position: sticky;
-    top: 30px;
+    position: relative;
+    top: 20px;
     width: 100%;
-    height: 40px;
+    height: 48px;
     display: flex;
     flex-flow: row;
     justify-content: space-around;
@@ -27,7 +27,7 @@
 }
 
 .logo{
-    width: 120px;
+    width: 140px;
     background-image: url(../public/assets/logo-full.svg);
     background-size: 100%;
     background-repeat: no-repeat;
@@ -41,8 +41,19 @@
     margin-top: 5px;
 }
 
+.quote{
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    top: 5vh;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    font-style: italic;
+}
+
 .container{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     height: 70%;
     width: 100%;
@@ -52,12 +63,40 @@
 }
 
 .tabs{
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    height: 10%;
+    height: 80px;
     width: 100%;
     border-radius: 30px 30px 0px 0px;
     background-color: #C62C2C;
     box-shadow: 0px -6px 16px #00000036;
+    display: inline-flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
 }
 
+.tab{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items:center ;
+    height: 80px;
+    width: 40px;
+}
+
+.tabi{
+    height: 20px;
+    width: 20px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tabp{
+    margin: 5px 0;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
