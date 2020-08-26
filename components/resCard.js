@@ -15,7 +15,7 @@ class Landing extends React.Component{
     }
     
     handleSubmit(event) {
-        window.location.href = "https://www.zomato.com/jaipur/restaurants?q=" + this.state.value;
+        window.location.href = "https://www.zomato.com/jdfdaipur/restaurants?q=" + this.state.value;
         event.preventDefault();
     }
 
