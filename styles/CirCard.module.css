@@ -1,0 +1,22 @@
+.wrapper{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 8px;
+}
+
+.image{
+    height: 80px;
+    width: 80px;
+    border-radius: 50px;
+    /* background-image: url(../public/assets/doodle.png); */
+    background-position: center;
+    background-size: cover;
+}
+
+.name{
+    font-size: 16px;
+    font-weight: 500;
+    color: #4d4d4d;
+}

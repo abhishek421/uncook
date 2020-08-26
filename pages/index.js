@@ -1,9 +1,49 @@
 import Head from 'next/head';
 import styles from '../styles/Mobile.module.css';
-
+import Navbar from '../components/navbar'
+import CirCard from '../components/circard';
+import LocBar from '../components/locationbar'
+import Link from 'next/link';
 
 class Home extends React.Component{
-  render(){
+  constructor(props) {
+    super(props);
+    this.state = {
+        zomKEY:'e5a967bf43adaa8f07126651250ae95c',
+        region: '',
+        city:'Loading... ',
+        zip:'',
+        lat:'',
+        lng:'',
+        city_id:'',
+        cuisines:[],
+        zone:'',
+        zone_id:''
+    };
+  }
+
+  componentDidMount(){
+    fetch("http://ip-api.com/json/?fields=regionName,city,zip,isp")
+    .then(res => res.json())
+    .then(
+        (result) => {
+        this.setState({
+            region:result.regionName,
+            city:result.city,
+            zip:result.zip,
+            isLoaded: true,
+        });
+        },
+        (error) => {
+        this.setState({
+            isLoaded: true,
+            error
+        });
+        }
+    )
+    }
+
+    render(){
       return(
         <div className={styles.background}>
         <Head>
@@ -18,31 +58,13 @@ class Home extends React.Component{
         </div>
         <div className={styles.quote}>"A recipe has no soul. You as the cook must bring soul to the recipe."</div>
         <div className={styles.container}>
+          <LocBar city={this.state.city}/>
+          <div className={styles.mhscroll}>
 
+          </div>
         </div>
-        <div className={styles.tabs}>
-            <div className={styles.tab}>
-                <div className={styles.tabi} style={{backgroundImage:"url(../assets/logo.svg)"}}></div>
-                <p className={styles.tabp}>UnCook</p>
-            </div>
-            <div className={styles.tab}>
-                <div className={styles.tabi} style={{backgroundImage:"url(../assets/search.svg)"}}></div>
-                <p className={styles.tabp}>Search</p>
-            </div>
-            <div className={styles.tab}>
-                <div className={styles.tabi} style={{backgroundImage:"url(../assets/order.svg)"}}></div>
-                <p className={styles.tabp}>Order</p>
-            </div>
-            <div className={styles.tab}>
-                <div className={styles.tabi} style={{backgroundImage:"url(../assets/cart.svg)"}}></div>
-                <p className={styles.tabp}>Cart</p>
-            </div>
-            <div className={styles.tab}>
-                <div className={styles.tabi} style={{backgroundImage:"url(../assets/settings.svg)"}}></div>
-                <p className={styles.tabp}>Settings</p>
-            </div>
+        <Navbar />
         </div>
-      </div>
       )
   }
 }

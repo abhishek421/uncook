@@ -46,7 +46,7 @@
     text-align: center;
     position: relative;
     top: 5vh;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 500;
     color: white;
     font-style: italic;
@@ -55,11 +55,21 @@
 .container{
     position: fixed;
     bottom: 0;
-    height: 70%;
+    height: 75%;
     width: 100%;
     border-radius: 30px 30px 0px 0px;
     background-color: #F2F2F2;
     box-shadow: 0px -6px 16px #00000036;
+    padding: 25px;
+}
+
+.mhscroll {
+    margin: 10px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display:flex;
+    flex-flow:row;
+    justify-content:space-between;
 }
 
 .tabs{
@@ -82,8 +92,9 @@
     flex-flow: column;
     justify-content: center;
     align-items:center ;
-    height: 80px;
+    height: 60px;
     width: 40px;
+    border-radius: 12px;
 }
 
 .tabi{
