@@ -1,4 +1,4 @@
-import styles from '../styles/LocBar.module.css'
+import styles from '../styles/Locbar.module.css'
 
 class LocBar extends React.Component{
     render(){
