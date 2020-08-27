@@ -1,49 +1,41 @@
 import Head from 'next/head';
 import styles from '../styles/Mobile.module.css';
 import Navbar from '../components/navbar'
-import CirCard from '../components/circard';
-import LocBar from '../components/locationbar'
-import Link from 'next/link';
+import LocBar from '../components/locationbar';
+import {useState,useEffect} from 'react';
+import zomato from '../pages/api/zomato'
 
-class Home extends React.Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-        zomKEY:'e5a967bf43adaa8f07126651250ae95c',
-        region: '',
-        city:'Loading... ',
-        zip:'',
-        lat:'',
-        lng:'',
-        city_id:'',
-        cuisines:[],
-        zone:'',
-        zone_id:''
-    };
-  }
 
-  componentDidMount(){
-    fetch("http://ip-api.com/json/?fields=regionName,city,zip,isp")
-    .then(res => res.json())
-    .then(
-        (result) => {
-        this.setState({
-            region:result.regionName,
-            city:result.city,
-            zip:result.zip,
-            isLoaded: true,
-        });
-        },
-        (error) => {
-        this.setState({
-            isLoaded: true,
-            error
-        });
+
+function Home(){
+      const [coords, setCoords] = useState();
+      const [location, setLocation] = useState();
+
+      function getLocation(searchApi){
+        var lat;
+        var lon;
+        if(navigator.geolocation){
+          navigator.geolocation.getCurrentPosition((e)=>{searchApi(e.coords.latitude,e.coords.longitude)})
         }
-    )
-    }
+        else{
+          console.log("GeoLocation not supported by browser")
+        }
+      }
 
-    render(){
+      const searchApi = async (lat,lon)=>{
+        try{
+            const response = await zomato.get(`/geocode?lat=${lat}&lon=${lon}`);
+            setLocation(response.data.location);
+            console.log(response.data)
+        }catch(err){
+            console.log(err)
+        }
+      }
+
+      useEffect(()=>{
+        getLocation(searchApi)
+      },[])
+
       return(
         <div className={styles.background}>
         <Head>
@@ -58,7 +50,14 @@ class Home extends React.Component{
         </div>
         <div className={styles.quote}>"A recipe has no soul. You as the cook must bring soul to the recipe."</div>
         <div className={styles.container}>
-          <LocBar city={this.state.city}/>
+          {
+            location?
+            <LocBar zone={location.title} city={location.city_name}/>
+            :
+            <div onClick={getLocation}>
+            <LocBar default="Set Location"/>
+            </div>
+          }
           <div className={styles.mhscroll}>
 
           </div>
@@ -67,6 +66,5 @@ class Home extends React.Component{
         </div>
       )
   }
-}
 
 export default Home;
