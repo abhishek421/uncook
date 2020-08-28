@@ -63,15 +63,6 @@
     padding: 25px;
 }
 
-.mhscroll {
-    margin: 10px 0;
-    overflow-x: auto;
-    overflow-y: hidden;
-    display:flex;
-    flex-flow:row;
-    justify-content:space-between;
-}
-
 .tabs{
     position: fixed;
     bottom: 0;

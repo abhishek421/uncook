@@ -4,16 +4,14 @@ import Navbar from '../components/navbar'
 import LocBar from '../components/locationbar';
 import {useState,useEffect} from 'react';
 import zomato from '../pages/api/zomato'
+import Content from '../components/content'
 
 
 
 function Home(){
-      const [coords, setCoords] = useState();
       const [location, setLocation] = useState();
 
       function getLocation(searchApi){
-        var lat;
-        var lon;
         if(navigator.geolocation){
           navigator.geolocation.getCurrentPosition((e)=>{searchApi(e.coords.latitude,e.coords.longitude)})
         }
@@ -25,8 +23,7 @@ function Home(){
       const searchApi = async (lat,lon)=>{
         try{
             const response = await zomato.get(`/geocode?lat=${lat}&lon=${lon}`);
-            setLocation(response.data.location);
-            console.log(response.data)
+            setLocation(response.data);
         }catch(err){
             console.log(err)
         }
@@ -52,15 +49,19 @@ function Home(){
         <div className={styles.container}>
           {
             location?
-            <LocBar zone={location.title} city={location.city_name}/>
+            <LocBar zone={location.location.title} city={location.location.city_name}/>
             :
             <div onClick={getLocation}>
             <LocBar default="Set Location"/>
             </div>
           }
-          <div className={styles.mhscroll}>
-
-          </div>
+          {
+            location?
+            <Content loc={location.location}/>
+            :
+            <div>TMKOC</div>
+          }
+          
         </div>
         <Navbar />
         </div>

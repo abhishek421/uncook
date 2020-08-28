@@ -1,0 +1,18 @@
+.mhscroll {
+    margin: 10px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display:flex;
+    flex-flow:row;
+    justify-content:space-between;
+}
+
+.mvscroll {
+    margin: 10px 0;
+    overflow-y: auto;
+    display:flex;
+    flex-flow:column;
+    justify-content:center;
+}
+
+
