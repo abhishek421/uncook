@@ -19,23 +19,11 @@ function Cart(){
             <div className={styles.logo}></div>
             <div className={styles.profile}></div>
         </div>
-        <div className="container">
+        <div className={styles.container} style={{height:'90% !important'}}>
           <div>Cart</div>
           <div className={styles.mhscroll}>
           </div>
         </div>
-        <style jsx>{`
-        .container{
-            position: fixed;
-            bottom: 0;
-            height: 90%;
-            width: 100%;
-            border-radius: 30px 30px 0px 0px;
-            background-color: #F2F2F2;
-            box-shadow: 0px -6px 16px #00000036;
-            padding: 25px;
-        }
-      `}</style>
         <Navbar />
         </div>
       )

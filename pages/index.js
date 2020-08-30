@@ -9,6 +9,7 @@ import Content from '../components/content'
 
 
 function Home(){
+      const [avail,setAvail] = useState();
       const [location, setLocation] = useState();
 
       function getLocation(searchApi){
@@ -23,7 +24,8 @@ function Home(){
       const searchApi = async (lat,lon)=>{
         try{
             const response = await zomato.get(`/geocode?lat=${lat}&lon=${lon}`);
-            setLocation(response.data);
+            setLocation(response.data.location);
+            setAvail(response.status)
         }catch(err){
             console.log(err)
         }
@@ -49,17 +51,17 @@ function Home(){
         <div className={styles.container}>
           {
             location?
-            <LocBar zone={location.location.title} city={location.location.city_name}/>
+            <LocBar zone={location.title} city={location.city_name}/>
             :
-            <div onClick={getLocation}>
-            <LocBar default="Set Location"/>
+            <div>
+            <LocBar default={true}/>
             </div>
           }
           {
-            location?
-            <Content loc={location.location}/>
+            avail==200?
+            <Content loc={location}/>
             :
-            <div>TMKOC</div>
+            <div>Loading...</div>
           }
           
         </div>

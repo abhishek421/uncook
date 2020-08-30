@@ -1,41 +1,25 @@
 import Link from "next/link";
-import styles from '../styles/Landing.module.css'
+import styles from '../styles/ResCard.module.css'
 
-class Landing extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {value: ''};
-    
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-      }
-    
-    handleChange(event) {
-        this.setState({value: event.target.value});
-    }
-    
-    handleSubmit(event) {
-        window.location.href = "https://www.zomato.com/jdfdaipur/restaurants?q=" + this.state.value;
-        event.preventDefault();
-    }
-
+class ResCard extends React.Component{
     render(){
         return(
-            <div className={styles.cover}>
-            <div className={styles.brand}>
-                <p style={{fontWeight:"600",fontSize:"60px",color:"white",margin:"auto"}}>UnCook</p>
-                <p style={{fontWeight:"400",fontSize:"20px",color:"white",margin:"auto"}}>"Homemade Happiness"</p>
-            </div>
-            <div className={styles.tagline}>
-                <p>Instant ready to be cooked food in minutes</p>
-            </div>
-            <form onSubmit={this.handleSubmit} className={styles.searchbar} >
-                <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="Search Dishes, Cuisines, Restaurants.." className={styles.search} />
-                <button type="submit" className={styles.submit}><img src="./assets/search.svg" height="24px"/></button>
-            </form>
-            </div>
+            <Link href="/restaurant/[slug]" as={`/restaurant/${this.props.name}`}>
+            <a className={styles.wrapper}>
+                <div className={styles.image} style={{backgroundImage:"url()"}}></div>
+                <div className={styles.details}>
+                    <div className={styles.name}>MS Dhabha </div>
+                    <div className={styles.address}>teri galiyo, me guzra krunga, mai</div>
+                    <div className={styles.tags}>Chingz CHinese, NOrth indian</div>
+                    <div className={styles.info}>
+                        <div className={styles.rating}>4.9</div>
+                        <div className={styles.reviews}>652</div>
+                    </div>
+                </div>
+            </a>
+            </Link>
         )
     }
 }
 
-export default Landing
+export default ResCard

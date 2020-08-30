@@ -7,8 +7,8 @@
 }
 
 .image{
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    width: 70px;
     border-radius: 50px;
     /* background-image: url(../public/assets/doodle.png); */
     background-position: center;
@@ -16,7 +16,8 @@
 }
 
 .name{
+    width: max-content;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
     color: #4d4d4d;
 }

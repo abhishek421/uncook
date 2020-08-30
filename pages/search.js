@@ -31,7 +31,7 @@ function Search(){
         .container{
             position: fixed;
             bottom: 0;
-            height: 90%;
+            height: 85%;
             width: 100%;
             border-radius: 30px 30px 0px 0px;
             background-color: #F2F2F2;
