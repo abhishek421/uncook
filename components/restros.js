@@ -1,4 +1,4 @@
-import ResCard from './rescard'
+import ResCard from './restcard'
 
 function Restros(props){
     const list = props.rests.map((rest,index) =>
