@@ -2,16 +2,16 @@ import styles from '../styles/Content.module.css'
 import Cuisines from './cuisines'
 import { useEffect, useState } from 'react';
 import zomato from '../pages/api/zomato'
-import ResCard from '../components/rescard'
+import Restros from '../components/restros';
 
 function Content(props){
-    const [zomData,setzomData]=useState({});
+    const [zomData,setzomData]=useState([]);
     const [Cuisi,setCuisi]=useState([]);
 
     const searchApi = async (id,etype)=>{
         try{
             const response = await zomato.get(`location_details?entity_id=${id}&entity_type=${etype}`);
-            setzomData(response.data);
+            setzomData(response.data.best_rated_restaurant);
             setCuisi(response.data.top_cuisines);
         }catch(err){
             console.log(err)
@@ -25,20 +25,7 @@ function Content(props){
     return(
         <div className={styles.Content}>
             <Cuisines cuisines={Cuisi}/>
-            <ResCard />
-            <ResCard />
-            <ResCard />
-            <Cuisines cuisines={Cuisi}/>
-            <ResCard />
-            <ResCard />
-            <ResCard />
-            <ResCard />
-            <ResCard />
-            <ResCard />
-            <ResCard />
-            <ResCard />
-            <ResCard />
-            <ResCard />
+            <Restros rests={zomData}/>
         </div>
     )
 }

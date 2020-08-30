@@ -6,7 +6,6 @@ import React,{useState} from 'react';
 
 
 function Cart(){
-      const [location, setLocation] = useState({lat:0,lon:0});
       return(
         <div className={styles.background}>
         <Head>
@@ -19,7 +18,7 @@ function Cart(){
             <div className={styles.logo}></div>
             <div className={styles.profile}></div>
         </div>
-        <div className={styles.container} style={{height:'90% !important'}}>
+        <div className={styles.container}>
           <div>Cart</div>
           <div className={styles.mhscroll}>
           </div>

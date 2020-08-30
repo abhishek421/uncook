@@ -6,7 +6,6 @@ import React,{useState} from 'react';
 
 
 function Settings(){
-      const [location, setLocation] = useState({lat:0,lon:0});
       return(
         <div className={styles.background}>
         <Head>
@@ -19,23 +18,11 @@ function Settings(){
             <div className={styles.logo}></div>
             <div className={styles.profile}></div>
         </div>
-        <div className="container">
+        <div className={styles.container}>
           <div>Settings</div>
           <div className={styles.mhscroll}>
           </div>
         </div>
-        <style jsx>{`
-        .container{
-            position: fixed;
-            bottom: 0;
-            height: 85%;
-            width: 100%;
-            border-radius: 30px 30px 0px 0px;
-            background-color: #F2F2F2;
-            box-shadow: 0px -6px 16px #00000036;
-            padding: 25px;
-        }
-      `}</style>
         <Navbar />
         </div>
       )

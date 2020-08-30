@@ -1,14 +1,12 @@
 import Head from 'next/head';
 import styles from '../styles/Mobile.module.css';
 import Navbar from '../components/navbar'
-import CirCard from '../components/circard';
 import LocBar from '../components/locationbar';
 import React,{useState} from 'react';
 
 
 
 function Search(){
-      const [location, setLocation] = useState({lat:0,lon:0});
       return(
         <div className={styles.background}>
         <Head>
@@ -21,24 +19,11 @@ function Search(){
             <div className={styles.logo}></div>
             <div className={styles.profile}></div>
         </div>
-        <div className="container">
-          <LocBar />
+        <div className={styles.container} id="mainscreen">
           <div>Search</div>
           <div className={styles.mhscroll}>
           </div>
         </div>
-        <style jsx>{`
-        .container{
-            position: fixed;
-            bottom: 0;
-            height: 85%;
-            width: 100%;
-            border-radius: 30px 30px 0px 0px;
-            background-color: #F2F2F2;
-            box-shadow: 0px -6px 16px #00000036;
-            padding: 25px;
-        }
-      `}</style>
         <Navbar />
         </div>
       )
