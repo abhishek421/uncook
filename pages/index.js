@@ -60,7 +60,7 @@ function Home(){
             avail==200?
             <Content loc={location}/>
             :
-            <div>Loading..</div>
+            <div>Loading...</div>
           }
           
         </div>
