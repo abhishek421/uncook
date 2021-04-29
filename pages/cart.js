@@ -19,9 +19,9 @@ function Cart(){
             <div className={styles.profile}></div>
         </div>
         <div className={styles.container}>
-          <div>Cart</div>
-          <div className={styles.mhscroll}>
-          </div>
+        <div className={styles.cart}>Sorry, Cart Empty</div>
+          <div className={styles.cartimg}></div>
+          
         </div>
         <Navbar />
         </div>

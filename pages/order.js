@@ -22,9 +22,7 @@ function Order(){
             <div className={styles.profile}></div>
         </div>
         <div className={styles.container}>
-          <div>Order</div>
-          <div className={styles.mhscroll}>
-          </div>
+        <div className={styles.cart}>404, Page not found</div>
         </div>
         <Navbar />
         </div>

@@ -20,9 +20,12 @@ function Search(){
             <div className={styles.profile}></div>
         </div>
         <div className={styles.container} id="mainscreen">
-          <div>Search</div>
-          <div className={styles.mhscroll}>
-          </div>
+          <input 
+            className={styles.searchbar}
+            key="random1"
+            placeholder={"Search Restaurants, Cuisines, Dishes"}
+          />
+          <div className={styles.serimg}></div>
         </div>
         <Navbar />
         </div>

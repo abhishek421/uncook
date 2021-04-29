@@ -4,7 +4,7 @@ import styles from '../styles/ResCard.module.css'
 class ResCard extends React.Component{
     render(){
         return(
-            <Link href="/restaurant/[slug]" as={`/restaurant/${this.props.restro.restaurant.id}`}>
+            <Link href="/restaurant/[resid]" as={`/restaurant/${this.props.restro.restaurant.id}`}>
             <a className={styles.wrapper}>
                 <div className={styles.image} style={{backgroundImage:"url(" + this.props.restro.restaurant.thumb + ")"}}></div>
                 <div className={styles.details}>
