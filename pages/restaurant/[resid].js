@@ -1,17 +1,32 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import zomato from "../api/zomato";
-import Restaurants, { Dishes } from "../../components/data";
+import { Dishes } from "../../data";
 import styles from "../../styles/Mobile.module.css";
 import Head from "next/head";
 import Navbar from "../../components/navbar";
+import useSWR from "swr";
+
+const fetcher = async (url) => {
+  const res = await fetch(url);
+  const data = await res.json();
+
+  if (res.status !== 200) {
+    throw new Error(data.message);
+  }
+  return data;
+};
 
 const Post = () => {
   const router = useRouter();
   const { resid } = router.query;
-  const [res, setRes] = useState();
+  const { data, error } = useSWR(
+    () => resid && `/api/restros/${resid}`,
+    fetcher
+  );
 
-  let rest = Restaurants.find((el) => el.id === resid);
+  if (error) return <div>{error.message}</div>;
+  if (!data) return <div>Loading...</div>;
 
   return (
     <div className={styles.background}>
@@ -54,11 +69,11 @@ const Post = () => {
                 lineHeight: "10px",
               }}
             >
-              <h2>{rest.name}</h2>
-              <h3>{rest.location}</h3>
+              <h2>{data.name}</h2>
+              <h3>{data.location}</h3>
 
               <div style={{ display: "flex", flexFlow: "row" }}>
-                {rest.type.map((i) => (
+                {data.type.map((i) => (
                   <h4 style={{ padding: "0 5px" }}>{i}</h4>
                 ))}
               </div>

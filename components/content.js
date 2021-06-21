@@ -3,7 +3,7 @@ import Cuisines from "./cuisines";
 import { useEffect, useState } from "react";
 import zomato from "../pages/api/zomato";
 import Restros from "./restros";
-import Restaurants from "./data";
+import Restaurants from "../data";
 
 function Content(props) {
   const [zomData, setzomData] = useState([]);
