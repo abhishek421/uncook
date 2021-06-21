@@ -4,7 +4,7 @@ import Navbar from "../components/navbar";
 import LocBar from "../components/locationbar";
 import React, { useState } from "react";
 import ResCard from "../components/restcard";
-import Restaurants from "./data";
+import Restaurants from "../components/data";
 
 function Search() {
   const { search } = window.location;

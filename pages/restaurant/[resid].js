@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import zomato from "../api/zomato";
-import Restaurants, { Dishes } from "../data";
+import Restaurants, { Dishes } from "../../components/data";
 import styles from "../../styles/Mobile.module.css";
 import Head from "next/head";
 import Navbar from "../../components/navbar";
