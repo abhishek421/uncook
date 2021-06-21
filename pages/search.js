@@ -7,7 +7,6 @@ import ResCard from "../components/restcard";
 import Restaurants from "../components/data";
 
 function Search() {
-  const { search } = window.location;
   const [searchQuery, setSearchQuery] = useState("");
 
   const filterData = (data, query) => {
